@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-export default function Signupform() {
+export default function Signin() {
     const [Username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const handlePasswordChange = (event) => {
@@ -15,14 +15,14 @@ export default function Signupform() {
 
     return (
         <div className='w-screen / h-screen bg-[#f8fafb]'>
-            <div className='w-[65%] h-screen mx-auto flex flex-col items-start  justify-center md:flex-row md:w-[100%] md:container md:mx-auto md:items-center md:justify-center
-              md:space-x-24
+            <div className='w-[65%] h-screen mx-auto flex flex-col items-start  justify-center sm:flex-row sm:w-[100%] xl:container xl:mx-auto sm:items-center sm:justify-center
+              sm:space-x-24
             '>
-                <div className='md:w-[35%]'>
+                <div className='sm:w-[40%]' >
                     <img src="./images/Hero.svg" alt="image"></img>
 
                 </div>
-                <form onSubmit={handleSubmit} className="flex-col  space-y-16 w-full md:w-[25%]">
+                <form onSubmit={handleSubmit} className="flex-col  space-y-16 w-full sm:w-[30%]">
                     {/* para and heading code */}
                     <div className='w-full'>
                         <div className='flex flex-col space-y-9 w-full'>
