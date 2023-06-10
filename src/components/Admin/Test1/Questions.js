@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Options from './Options';
 export default function Questions() {
-    const array = useSelector((state) => state.array);
+    const array = useSelector((state) => state.test1Array);
   return (
     <>
        <div>

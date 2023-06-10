@@ -38,7 +38,7 @@ export default function () {
                     <div className="p-4">
                         <div className="lg:flex lg:flex-row lg:space-x-7 flex flex-col ">
                             {/* Left */}
-                            <div className=" mt-8 pt-8 pb-8 lg:w-[30vw] bg-[#fff] border / border-gray-200 ">
+                            <div className=" mt-8 pt-8 pb-8 lg:w-[30vw] bg-purple-700 border / border-gray-200 ">
                                 {/* Upper                            */}
                                 <div className='flex flex-col items-center space-y-6 '>
                                     {/* Avatar */}

@@ -7,16 +7,20 @@ import Professions from './components/Home/Professions';
 import Footer from './components/Home/Footer';
 import Navbar from './components/Home/Navbar';
 import UserProfile from './components/UserProfile/UserProfile';
-import Test1 from './components/UserProfile/Test1';
-import UserProfileAdmin from './components/Admin/UserProfileAdmin';
 
+import UserProfileAdmin from './components/Admin/UserProfileAdmin';
+import Test1 from './components/Admin/Test1/Test1';
+import Test2 from './components/Admin/Test2/Test2';
+import Test3 from './components/Admin/Test3/Test3';
+import QuestionsTest1 from './components/UserProfile/QuestionsTest1';
 function App() {
   return (
     <>  
+            <Test1/>  
+          <QuestionsTest1/>
 
 
-
-        <UserProfileAdmin></UserProfileAdmin>  
+         {/* <UserProfileAdmin></UserProfileAdmin>   */}
 
      {/* <Options/> */}
      {/* <UserProfile/>  */}

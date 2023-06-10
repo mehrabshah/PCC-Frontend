@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Info from '../UserProfile/Info';
-import Addquestionaire from './Addquestionaire';
-import Questions from './Questions';
 import Testname from './Testname';
 export default function () {
-    const count = useSelector((state)=>state.counter.value)
     
 return (
     <>
@@ -41,10 +38,8 @@ return (
 
                         </div>
                         {/* right */}
-                        <div className="flex flex-col lg:w-[70%]   mt-8   ">    
-                        {count===0 && <Info/>}
-                        {count===1 && <Addquestionaire/>}
-                        {count===2 && <Questions/>}
+                        <div className="flex flex-col lg:w-[70%] mt-8">    
+                          <Info/>
                         </div>
                     </div>
                 </div>
