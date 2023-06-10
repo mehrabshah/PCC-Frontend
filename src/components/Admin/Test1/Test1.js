@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Addquestionaire from './Addquestionaire'
 import Questions from './Questions'
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 export default function Test1() {
   return (
     <>
@@ -10,7 +12,13 @@ export default function Test1() {
           <div className="m-6">
             <div className="lg:flex lg:flex-row lg:space-x-7 h-[90vh]  flex flex-col">
                            
-            <div className=" mt-8 pt-8 pb-8 lg:w-[40%] bg-[#262A56] border  border-gray-200  ">             
+            <div className=" mt-8 pt-8 pb-8 lg:w-[40%] bg-[#262A56] border  border-gray-200  ">  
+                <div className='text-[#E3CCAE] pl-5 text-3xl'>
+                       
+ 
+            
+                 <Link to="/admin"> Back</Link>      
+                </div>           
                 <Addquestionaire/> 
              </div>
              <div className="flex flex-col lg:w-[60%]   mt-8">

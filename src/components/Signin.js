@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 export default function Signin() {
     const [Username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -8,10 +9,35 @@ export default function Signin() {
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
     };
+   
+    const [selectedOption, setSelectedOption] = useState('');
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
+        console.log(event.target.value)
+    };
+    const navigate = useNavigate(); // Initialize useNavigate hook
     const handleSubmit = (event) => {
         event.preventDefault();
+        // Redirect based on selected role
+        switch (selectedOption) {
+            case 'user':
+                navigate('/user'); // Use navigate to redirect
+                break;
+            case 'admin':
+                navigate('/admin');
+                break;
+            case 'employer':
+                navigate('/employer');
+                break;
+            default:
+                // Handle other cases or display an error message
+                break;
+        }
         // Add code to submit form data to server or perform other actions
     };
+
+
+
 
     return (
         <div className='w-screen / h-screen bg-[#f8fafb]'>
@@ -61,6 +87,44 @@ export default function Signin() {
                                     />
                                 </div>
                             </div>
+                            <div className='space-x-8 '>
+                                <h1 className='pb-4 '>Choose Role</h1>
+                                <label className=''>
+                                    <input
+                                        className='ml-2 mr-2 accent-black'
+                                        type="radio"
+                                        value="user"
+                                        checked={selectedOption === 'user'}
+                                        onChange={handleOptionChange}
+                                    />
+                                    User
+                                </label>
+
+                                <label>
+                                    <input
+                                        className=' form-radio / accent-black  ml-2 mr-2'
+                                        type="radio"
+                                        value="admin"
+                                        checked={selectedOption === 'admin'}
+                                        onChange={handleOptionChange}
+                                    />
+                                    Admin
+                                </label>
+
+                                <label>
+                                    <input
+                                        className='ml-2 mr-2 accent-black'
+                                        type="radio"
+                                        value="employer"
+                                        checked={selectedOption === 'employer'}
+                                        onChange={handleOptionChange}
+                                    />
+                                    Employer
+                                </label>
+                            </div>
+
+
+
                             <div className='flex flex-row justify-between'>
                                 <div className='flex flex-row space-x-2'>
                                     <input type="checkbox" id="rememberMe" name="rememberMe" className='bg-[#6c63ff] form-checkbox h-5 w-5 ' />
@@ -73,7 +137,7 @@ export default function Signin() {
                         </div>
                     </div>
                     <div className='w-full'>
-                    <button type="submit" className="bg-[#6c63ff] h-[4rem] / text-white w-full">Login</button>
+                        <button type="submit" className="bg-[#6c63ff] h-[4rem] / text-white w-full">Login</button>
                     </div>
                 </form>
             </div>

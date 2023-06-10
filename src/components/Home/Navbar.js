@@ -25,10 +25,14 @@ export default function Navbar() {
               ))}
             </ul>
             <div className='flex items-center justify-center p-5 rounded-lg  h-12 text-2xl bg-[#262A56] w-24 text-[#fff] hover:bg-blue-900'>
-              <button className=''>LogIn</button>
+             <Link to="/signin">  
+              <button>LogIn</button>
+              </Link>
             </div>
             <div className='flex items-center justify-center p-5 rounded-lg h-12 text-2xl bg-[#262A56] w-24 text-[#fff] hover:bg-blue-900 '>
+            <Link to="/signup">  
               <button>SignUp</button>
+              </Link>
             </div>
           </nav>
           <div className='md:hidden block'>

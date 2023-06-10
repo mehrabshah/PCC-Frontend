@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
-import Info from './Info';
-import Jobs from './Jobs';
+import Info from '../UserProfile/Info';
+
+
 export default function () {
     const tests = [
         { id: 1, name: 'test1', },
@@ -69,8 +70,8 @@ export default function () {
                             </div>
                             {/* right */}
                             <div className="flex flex-col lg:w-[70vw]   mt-8">
-                                {activeTab ===1 && <Info></Info>}
-                                {activeTab ===2 && <Jobs></Jobs>} 
+                                 <Info/>
+                                 
                             </div>
                         </div>
                     </div>

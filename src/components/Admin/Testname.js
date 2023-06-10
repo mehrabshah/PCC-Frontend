@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { Link} from 'react-router-dom';
 export default function Testname() {
     const tests = [
-        { id: 1, name: 'Test1', },
-        { id: 2, name: 'Test2', },
-        { id: 3, name: 'Test3', },
+        { id: 1, name: 'DBG', },
+        { id: 2, name: 'RGB', },
+        { id: 3, name: 'KGS', },
     ];
+    
+   
     const allTests = tests.map((test) => (
         
             <div key={test.id} className="flex-col flex mb-8">
@@ -12,7 +15,7 @@ export default function Testname() {
                     <div className='text-3xl text-[#E3CCAE]'>
                         {test.name}
                     </div>  
-                    <button className='flex items-center justify-center h-12 text- xl bg-[#B8621B] w-40 text-[#E3CCAE] hover:bg-blue-900' >Click here</button>
+                    <Link to={`/test${test.id}`} className="flex items-center justify-center h-12 text- xl bg-[#B8621B] w-40 text-[#E3CCAE] hover:bg-blue-900">Click here</Link>
                 </div>
             </div>
         

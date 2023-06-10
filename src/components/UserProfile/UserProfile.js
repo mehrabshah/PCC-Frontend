@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Info from './Info';
 import Jobs from './Jobs';
+import { Link} from 'react-router-dom';
 export default function () {
     const tests = [
         { id: 1, name: 'test1', },
@@ -17,7 +18,7 @@ export default function () {
                 </div>
                 <div>
                     <div className='flex items-center justify-center h-12 text- xl bg-[#B8621B] w-24 text-white hover:bg-blue-900 '>
-                        <button>click here</button>
+                    <Link to={`/questiontest${test.id}`} className='flex items-center justify-center h-12 text- xl bg-[#B8621B] w-40 text-[#E3CCAE] hover:bg-blue-900'>Click here</Link>
                     </div>
                 </div>
             </div>
