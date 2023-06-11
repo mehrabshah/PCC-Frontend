@@ -1,16 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
-export const test1ArraySlice = createSlice({
-  name: 'test1Array',  
+export const test2ArraySlice = createSlice({
+  name: 'test2Array',  
   initialState:[],
   reducers: {
-    test1AddQuestion: (state,action) => {
+    test2AddQuestion: (state,action) => {
+      console.log(state)
       const newQuestion = {
         id: Date.now(),
         text: action.payload, // Use the payload as the question text
       };
             return [...state, newQuestion];
     },
-    test1DeleteQuestion:(state,action)=>
+    test2DeleteQuestion:(state,action)=>
     {
       const id = action.payload;
       return state.filter(item => item.id!=id);
@@ -18,5 +19,5 @@ export const test1ArraySlice = createSlice({
   },
 })
 // Action creators are generated for each case reducer function
-export const {test1AddQuestion, test1DeleteQuestion} = test1ArraySlice.actions
-export default test1ArraySlice.reducer
+export const {test2AddQuestion, test2DeleteQuestion} = test2ArraySlice.actions
+export default test2ArraySlice.reducer

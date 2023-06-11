@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {test1DeleteQuestion } from '../../../redux/test1Questionaire';
+import {test2DeleteQuestion } from '../../../redux/test2Questionaire';
 const Options = (props) => {
   const [selectedOption, setSelectedOption] = useState('');
   const handleOptionChange = (e) => {
@@ -95,7 +95,7 @@ const Options = (props) => {
         </form>
         <div className='flex flex-row items-center justify-between'>
           
-          <button className='bg-[#B8621B] text-[#E3CCAE] h-10 w-32' onClick={()=>dispatch(test1DeleteQuestion(props.index))}>Delete</button>
+          <button className='bg-[#B8621B] text-[#E3CCAE] h-10 w-32' onClick={()=>dispatch(test2DeleteQuestion(props.index))}>Delete</button>
           <button className='bg-[#B8621B] text-[#E3CCAE] h-10 w-32'>Edit</button>
         </div>
         

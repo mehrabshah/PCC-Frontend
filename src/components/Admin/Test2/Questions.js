@@ -5,7 +5,7 @@ export default function Questions() {
     const array2 = useSelector((state) => state.test2Array);
   return (
     <>
-        {console.log(array2)}
+        
        <div>
        <ul className='w-full'>
         {array2.map((item) => (

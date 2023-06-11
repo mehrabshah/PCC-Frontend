@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Info from '../UserProfile/Info';
+import { Link } from 'react-router-dom';
 import Testname from './Testname';
 export default function () {
     
@@ -33,6 +34,9 @@ return (
                                 <p className=' / text-center pl-8 pr-8 font-medium text-[#E3CCAE]'>Select test for View, Edit, Delete and Add questionnaire</p>
                                 <div>
                                    <Testname></Testname>
+                                   <button className='bg-[#B8621B] h-12 w-32  text-[#E3CCAE] hover:bg-blue-900 ' >
+                                    <Link to="/" >Logout</Link>
+                                   </button>
                                 </div>
                             </div>
 
