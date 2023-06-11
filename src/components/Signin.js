@@ -130,14 +130,14 @@ export default function Signin() {
                                     <input type="checkbox" id="rememberMe" name="rememberMe" className='bg-[#6c63ff] form-checkbox h-5 w-5 ' />
                                     <label for="rememberMe">Remember me</label>
                                 </div>
-                                <div>
-                                    Forgot Password
-                                </div>
+                             <Link to="/reset"> <div className='/ cursor-pointer'>
+                                     Forgot Password
+                                </div></Link>
                             </div>
                         </div>
                     </div>
                     <div className='w-full'>
-                        <button type="submit" className="bg-[#6c63ff] h-[4rem] / text-white w-full">Login</button>
+                        <button type="submit" className="bg-[#6c63ff] h-[4rem] / text-white w-full  hover:bg-blue-800">Login</button>
                     </div>
                 </form>
             </div>
