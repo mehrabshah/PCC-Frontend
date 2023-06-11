@@ -6,6 +6,7 @@ import test3Array from './test3Questionaire';
 import test1bool from './test1bool';
 import test2bool from './test2bool';
 import test3bool from './test3bool';
+import postarray from './postarray';
 export const store = configureStore({
   reducer: {
     counter: countReducer,
@@ -15,5 +16,6 @@ export const store = configureStore({
     test1bool:test1bool,
     test2bool:test2bool,
     test3bool:test3bool,
+    postarray:postarray,
   },
 })

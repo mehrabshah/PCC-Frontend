@@ -13,6 +13,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UserProfileEmployer from './components/Employer/UserProfileEmployer';
 import QuestionsTest2 from './components/UserProfile/QuestionsTest2';
 import QuestionsTest3 from './components/UserProfile/QuestionsTest3';
+import PostJob from './components/Employer/PostJob';
 function App() {
   return (
     <>  
@@ -30,8 +31,7 @@ function App() {
                   <Route path="/questiontest1" element={<QuestionsTest1/>}></Route>
                   <Route path="/questiontest2" element={<QuestionsTest2/>}></Route>
                   <Route path="/questiontest3" element={<QuestionsTest3/>}></Route>
-
-
+                  <Route path="/post" element={<PostJob/>}></Route>
               </Routes>
            </BrowserRouter>    
     </>

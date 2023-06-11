@@ -4,6 +4,7 @@ export const test1ArraySlice = createSlice({
   initialState:[],
   reducers: {
     test1AddQuestion: (state,action) => {
+      
       const newQuestion = {
         id: Date.now(),
         text: action.payload, // Use the payload as the question text

@@ -68,8 +68,8 @@ export default function () {
                                         <div className='flex items-center justify-center / h-12 text-xl bg-[#B8621B] w-24 text-[#E3CCAE]  hover:bg-blue-900' onClick={() => handleTabClick(1)}>
                                             <button>Info</button>
                                         </div>
-                                        <div className='flex items-center justify-center h-12 text- xl bg-[#B8621B] w-24 text-[#E3CCAE]  hover:bg-blue-900 ' onClick={() => handleTabClick(2)}>
-                                            <button>Jobs</button>
+                                        <div className='flex items-center justify-center h-12 text- xl bg-[#B8621B] / w-32 text-[#E3CCAE]  hover:bg-blue-900 ' onClick={() => handleTabClick(2)}>
+                                            <button>Match Jobs</button>
                                         </div>
                                     </div>
                                     <div className='h-[0.09rem]  bg-[#E3CCAE] w-72'>
