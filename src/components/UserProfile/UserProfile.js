@@ -11,24 +11,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { modifytest1bool } from '../../redux/test1bool';
 import { modifytest2bool } from '../../redux/test2bool';
 import { modifytest3bool } from '../../redux/test3bool';
+import Report from './Report';
+import Personality from './Personality';
 export default function () {
     const test1bool = useSelector((state) => state.test1bool.value)
     const test2bool = useSelector((state) => state.test2bool.value)
     const test3bool = useSelector((state) => state.test3bool.value)
     const dispatch = useDispatch()
-    const navigate=useNavigate()
-    const handleReprot=()=>{
-        navigate('/report');
-    }
-    const handlePersonality=()=>{
-        navigate('/personality');
-    }
-
-
+   
     const tests = [
-        { id: 1, name: 'test1', },
-        { id: 2, name: 'test2', },
-        { id: 3, name: 'test3', },
+        { id: 1, name: 'MBIT', },
+        { id: 2, name: 'NEO-PI-R', },
+        { id: 3, name: 'BFI', },
     ];
 
     const rendertest = tests.map((test) => (
@@ -81,12 +75,12 @@ export default function () {
                                             <button>Match Jobs</button>
                                         </div>
                                     </div>
-                                    <div className='flex items-center justify-center h-12 text- xl bg-[#B8621B] / w-44 text-[#E3CCAE]  hover:bg-blue-900 ' onClick={() => handleTabClick(2)}>
-                                        <button onClick={handleReprot()}>Generate report</button>
+                                     <div className='flex items-center justify-center h-12 text- xl bg-[#B8621B] / w-44 text-[#E3CCAE]  hover:bg-blue-900 ' onClick={() => handleTabClick(3)}>
+                                        <button >Generate report</button>
                                     </div>
-                                    <div className='flex items-center justify-center h-12 text- xl bg-[#B8621B] / w-44 text-[#E3CCAE]  hover:bg-blue-900 ' onClick={() => handleTabClick(2)}>
-                                        <button onClick={handlePersonality()}>Personality Standout</button>
-                                    </div>
+                                    <div className='flex items-center justify-center h-12 text- xl bg-[#B8621B] / w-44 text-[#E3CCAE]  hover:bg-blue-900 ' onClick={() => handleTabClick(4)}>
+                                        <button >Personality Standout</button>
+                                    </div> 
 
                                     <div className='h-[0.09rem]  bg-[#E3CCAE] w-72'>
                                     </div>
@@ -108,6 +102,9 @@ export default function () {
                             <div className="flex flex-col lg:w-[70%]   mt-8 space-y-5">
                                 {activeTab === 1 && <Info></Info>}
                                 {activeTab === 2 && <Jobs></Jobs>}
+                                {activeTab === 3 && <Report/>}
+                                {activeTab === 4 && <Personality/>}
+
                                 {activeTab === 1 && (<div className='flex flex-col w-full  space-y-4'>
                                     <div className='flex flex-col items-center w-full sm:space-x-7 sm:flex-row space-y-4 sm:space-y-0'>
                                         {test1bool && (<div className='sm:w-[48%] w-[100%]'><Result1 /></div>)}

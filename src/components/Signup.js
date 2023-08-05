@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 export default function Signup() {
     const initialFormData = [
         {
@@ -7,7 +8,7 @@ export default function Signup() {
             name: 'Username',
             id: 'Username',
             placeholder: 'Username',
-            value: '',
+            
             
         },
         {
@@ -16,7 +17,7 @@ export default function Signup() {
             name: 'Email',
             id: 'Email',
             placeholder: 'Email',
-            value: '',
+            
             
         },
         {
@@ -25,7 +26,7 @@ export default function Signup() {
             name: 'Age',
             id: 'Age',
             placeholder: 'Age',
-            value: '',
+            
         
         },
         {
@@ -34,7 +35,7 @@ export default function Signup() {
             name: 'password',
             id: 'password',
             placeholder: 'Password',
-            value: '',
+            
             
         },
         {
@@ -43,7 +44,7 @@ export default function Signup() {
             name: 'Confirmpassword',
             id: 'Confirmpassword',
             placeholder: 'Confirm Password',
-            value: '',
+            
             
         },
     ];
@@ -65,6 +66,8 @@ export default function Signup() {
     
     const handleSubmit = (event) => {
         event.preventDefault();
+
+
         // Add code to submit form data to server or perform other actions
     };
     const [selectedOption, setSelectedOption] = useState('');
@@ -160,7 +163,7 @@ export default function Signup() {
                         </div>
                     </div>
                     <div className='w-full'>
-                        <button type="submit" className="bg-[#6c63ff] h-[4rem] / text-white w-full">Login</button>
+                  <Link to="/"><button type="submit" className="bg-[#6c63ff] h-[4rem]  hover:bg-orange-700   text-white w-full">Signup</button></Link>
                     </div>
                 </form>
             </div>

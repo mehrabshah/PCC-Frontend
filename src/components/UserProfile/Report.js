@@ -1,12 +1,24 @@
 import React from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
+
 export default function Report() {
+    
+    const navigate=useNavigate();
+    const handleClick=()=>
+    {
+       navigate("/user")
+    }    
+    
+    
     return (
         <>
-            <div className="h-screen w-screen bg-black overflow-x-hidden box-border m-0 p-0 ">
-                <div className="lg:max-w-xl  lg:mx-auto  h-full">
+            
+            
+                
                     {/* container-inner */}
                     <div className="p-4 flex flex-row h-full items-center justify-center ">
                         <div className=" flex flex-col w-[80%] bg-[#262A56] pl-8 pr-8 pt-16 pb-16 / space-y-12 border  border-gray-200   ">
+                            <button className='text-[#E3CCAE] text-3xl font-bold' onClick={handleClick()} >Back</button>
                             <div className='text-[#E3CCAE] font-bold text-3xl flex flex-row items-center justify-center'>Report</div>
                             <div className='flex flex-col space-y-6'>
                                 <div className='flex flex-col'>
@@ -32,10 +44,8 @@ export default function Report() {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-
+                
+            
         </>
     )
 }

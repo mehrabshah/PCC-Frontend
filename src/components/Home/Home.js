@@ -43,25 +43,25 @@ export default function Home() {
     
                             md:flex-row md:items-center md:justify-center md:relative md:bottom-24 z-0'>
                                  <div className='flex flex-col items-center justify-center h-[24rem]  / md:bg-pink-200  space-y-5 w-[95vw] md:w-[24vw] md:p-8 xl:w-[300px] md:h-fit' >
-                                    <h1 className=' text-2xl  font-bold text-center'>Imformed decsion</h1>
+                                    <h1 className=' text-2xl  font-bold text-center'>Informed decsion</h1>
                                     <p className='text-center m-4  leading-9' >System that assists students in deciding a career path that is suitable for them
                                         System that assists students
                                     </p>
                                 </div>
                                 <div className='flex flex-col items-center justify-center h-[24rem]  md:bg-green-200  space-y-5 w-[95vw] md:w-[24vw] md:p-8 xl:w-[300px] md:h-fit' >
-                                    <h1 className=' text-2xl  font-bold text-center'>Imformed decsion</h1>
+                                    <h1 className=' text-2xl  font-bold text-center'>Informed decsion</h1>
                                     <p className='text-center m-4  leading-9' >System that assists students in deciding a career path that is suitable for them
                                         System that assists students
                                     </p>
                                 </div>
                                 <div className='flex flex-col items-center justify-center h-[24rem]  md:bg-yellow-200  space-y-5 w-[95vw] md:w-[24vw] md:p-8 xl:w-[300px] md:h-fit' >
-                                    <h1 className=' text-2xl  font-bold text-center'>Imformed decsion</h1>
+                                    <h1 className=' text-2xl  font-bold text-center'>Informed decsion</h1>
                                     <p className='text-center m-4  leading-9' >System that assists students in deciding a career path that is suitable for them
                                         System that assists students
                                     </p>
                                 </div>
                                 <div className='flex flex-col items-center justify-center h-[24rem]  md:bg-purple-200  space-y-5 w-[95vw] md:w-[24vw] md:p-8 xl:w-[300px] md:h-fit' >
-                                    <h1 className=' text-2xl  font-bold text-center'>Imformed decsion</h1>
+                                    <h1 className=' text-2xl  font-bold text-center'>Informed decsion</h1>
                                     <p className='text-center m-4  leading-9' >System that assists students in deciding a career path that is suitable for them
                                         System that assists students
                                     </p>

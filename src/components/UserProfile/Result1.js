@@ -50,7 +50,7 @@ export default function Result1() {
   return (
     <>
     <div className=' bg-[#262A56] space-y-6 pt-10 pb-10 border  border-gray-200 '>
-     <h1 className='flex flex-row items-center justify-center text-[#E3CCAE] text-2xl font-bold'>RGB RESULT</h1> 
+     <h1 className='flex flex-row items-center justify-center text-[#E3CCAE] text-2xl font-bold'>MBIT</h1> 
      <div className='h-80 flex flex-row items-center justify-center  bg-[#262A56]'>
         <Pie data={data} options={options}/>
     </div>

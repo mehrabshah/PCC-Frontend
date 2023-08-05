@@ -38,16 +38,16 @@ export default function Personality() {
 
     return (
         <>
-            <div className="h-screen w-screen bg-black overflow-x-hidden box-border m-0 p-0 ">
-                <div className="lg:max-w-xl  lg:mx-auto  h-full">
-                    {/* container-inner */}
+            
+                
+                    
                     <div className="p-4 flex flex-row h-full items-center justify-center ">
                         <div className=" flex flex-col w-[80%] bg-white pl-8 pr-8 pt-16 pb-16 / space-y-12 border  border-gray-200   ">
                             <Radar data={data} />
                         </div>
                     </div>
-                </div>
-            </div>
+                
+            
         </>
     )
 }
