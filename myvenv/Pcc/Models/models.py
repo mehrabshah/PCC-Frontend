@@ -75,3 +75,5 @@ class Feedback(models.Model):
 class Feedback(models.Model):
     User_Name = models.ForeignKey(User, on_delete=models.CASCADE)
     FeedBack = models.TextField(blank=True)
+
+# models
