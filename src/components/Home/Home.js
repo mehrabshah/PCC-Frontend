@@ -37,9 +37,9 @@ export default function Home() {
                     System that assists students in deciding a career path that
                     is suitable for them System that assists students
                   </p>
-                  <button className="bg-[#B8621B] h-12 / w-60 text-[#E3CCAE] text-xl    xl:block hidden">
+                  {/* <button className="bg-[#B8621B] h-12 / w-60 text-[#E3CCAE] text-xl    xl:block hidden">
                     Click Here
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

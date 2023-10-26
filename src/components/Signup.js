@@ -160,7 +160,7 @@ export default function Signup() {
             </div>
           </div>
           <div className="w-full">
-            <Link to="/">
+            <Link to="/signin">
               <button
                 type="submit"
                 className="bg-[#6c63ff] h-[3rem]  hover:bg-orange-700   text-white w-full"

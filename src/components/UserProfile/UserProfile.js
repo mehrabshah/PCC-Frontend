@@ -4,8 +4,8 @@ import Jobs from './Jobs';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Result1 from './Result1';
-import Result2 from './Result2';
-import Result3 from './Result3';
+// import Result2 from './Result2';
+// import Result3 from './Result3';
 import { useDispatch, useSelector } from 'react-redux';
 import { modifytest1bool } from '../../redux/test1bool';
 import { modifytest2bool } from '../../redux/test2bool';
@@ -20,8 +20,8 @@ export default function () {
 
   const tests = [
     { id: 1, name: 'MBIT' },
-    { id: 2, name: 'NEO-PI-R' },
-    { id: 3, name: 'BFI' },
+    // { id: 2, name: 'NEO-PI-R' },
+    // { id: 3, name: 'BFI' },
   ];
 
   const rendertest = tests.map((test) => (
@@ -69,7 +69,7 @@ export default function () {
                   </div>
                   <div>
                     <h1 className="text-3xl text-[#E3CCAE]  font-medium">
-                      Name
+                      Ali
                     </h1>
                   </div>
                   <div className="flex flex-row / space-x-4">
@@ -97,6 +97,14 @@ export default function () {
                     onClick={() => handleTabClick(4)}
                   >
                     <button>Personality Standout</button>
+                  </div>
+                  <div
+                    className="flex items-center justify-center h-12 text- xl bg-[#B8621B] / w-44 text-[#E3CCAE]  hover:bg-blue-900 rounded"
+                    onClick={() => handleTabClick(4)}
+                  >
+                    <Link to="/careerlist">
+                      <button> Career List</button>
+                    </Link>
                   </div>
 
                   <div className="h-[0.09rem]  bg-[#E3CCAE] w-72"></div>
@@ -142,13 +150,13 @@ export default function () {
                       )}
                       {test2bool && (
                         <div className="sm:w-[48%] w-[100%]">
-                          <Result2 />
+                          {/* <Result2 /> */}
                         </div>
                       )}
                     </div>
                     {test3bool && (
                       <div className="sm:w-[48%] w-[100%]">
-                        <Result3 />{' '}
+                        {/* <Result3 />{' '} */}
                       </div>
                     )}
                   </div>

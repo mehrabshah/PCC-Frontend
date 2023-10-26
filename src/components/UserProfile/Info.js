@@ -2,10 +2,28 @@ import React, { useState } from 'react';
 
 export default function Info() {
   const initialFormData = [
-    { label: 'Full Name', type: 'text', id: 'name', value: 'John Doe', readOnly: true },
-    { label: 'Email', type: 'email', id: 'email', value: 'johndoe@example.com', readOnly: true },
-    { label: 'Age', type: 'number', id: 'age', value: '25', readOnly: true },
-    { label: 'Gender', type: 'text', id: 'gender', value: 'Male', readOnly: true },
+    {
+      label: 'Full Name',
+      type: 'text',
+      id: 'name',
+      value: 'Ali',
+      readOnly: true,
+    },
+    {
+      label: 'Email',
+      type: 'email',
+      id: 'email',
+      value: 'ali123@example.com',
+      readOnly: true,
+    },
+    { label: 'Age', type: 'number', id: 'age', value: '22', readOnly: true },
+    {
+      label: 'Gender',
+      type: 'text',
+      id: 'gender',
+      value: 'Male',
+      readOnly: true,
+    },
   ];
 
   const [formData, setFormData] = useState(initialFormData);
@@ -42,7 +60,10 @@ export default function Info() {
             <form className="flex flex-col space-y-4 p-8">
               {formData.map((field) => (
                 <div className="flex flex-row justify-between" key={field.id}>
-                  <label className="block mb-2 text-[#E3CCAE]" htmlFor={field.id}>
+                  <label
+                    className="block mb-2 text-[#E3CCAE]"
+                    htmlFor={field.id}
+                  >
                     {field.label}
                   </label>
                   <input

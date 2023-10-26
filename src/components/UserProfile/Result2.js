@@ -5,7 +5,14 @@ import { Pie } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
-  labels: ['Leadership', 'Consistency', 'Discipline', 'Hardworking', 'Smaarkworking', 'Honesty'],
+  labels: [
+    'Leadership',
+    'Consistency',
+    'Discipline',
+    'Hardworking',
+    'Smaarkworking',
+    'Honesty',
+  ],
   datasets: [
     {
       label: '# TEST2 RESULT',
@@ -36,27 +43,25 @@ export default function Result1() {
     plugins: {
       legend: {
         labels: {
-          color: '#E3CCAE',     // Change the color of the legend text
+          color: '#E3CCAE', // Change the color of the legend text
           font: {
-            size: 16,         // Change the font size of the legend text
+            size: 16, // Change the font size of the legend text
           },
         },
       },
     },
   };
 
-
-
-
   return (
     <>
-      <div className=' bg-[#262A56] space-y-6 pt-10 pb-10 border  border-gray-200'>
-        <h1 className='flex flex-row items-center justify-center text-[#E3CCAE] text-2xl font-bold'>NEO-PI-R</h1>
-        <div className='h-80  bg-[#262A56] flex items-center justify-center'>
+      <div className=" bg-[#262A56] space-y-6 pt-10 pb-10 border  border-gray-200">
+        <h1 className="flex flex-row items-center justify-center text-[#E3CCAE] text-2xl font-bold">
+          NEO-PI-R
+        </h1>
+        <div className="h-80  bg-[#262A56] flex items-center justify-center">
           <Pie data={data} options={options} />
         </div>
       </div>
     </>
   );
 }
-

@@ -19,31 +19,33 @@ import Mail from './components/ResetPassword/Mail';
 import NewPassword from './components/ResetPassword/NewPassword';
 import Report from './components/UserProfile/Report';
 import Personality from './components/UserProfile/Personality';
+import CareerList from './components/UserProfile/CareerList';
 function App() {
   return (
-    <>  
-           <BrowserRouter>
-              <Routes>
-                  <Route path="/" element={<HomeRouting/>}></Route>
-                  <Route path="/signup" element={<Signup/>}></Route>
-                  <Route path="/signin" element={<Signin/>}></Route> 
-                  <Route path="/admin" element={<UserProfileAdmin/>}></Route  >
-                  <Route path="/employer" element={<UserProfileEmployer/>}></Route>
-                  <Route path="/user" element={<UserProfile/>}></Route> 
-                  <Route path="/test1" element={<Test1/>}></Route>
-                  <Route path="/test2" element={<Test2/>}></Route>
-                  <Route path="/test3" element={<Test3/>}></Route>
-                  <Route path="/questiontest1" element={<QuestionsTest1/>}></Route>
-                  <Route path="/questiontest2" element={<QuestionsTest2/>}></Route>
-                  <Route path="/questiontest3" element={<QuestionsTest3/>}></Route>
-                  <Route path="/post" element={<PostJob/>}></Route>
-                  <Route path="/reset" element={<Reset/>}></Route>
-                  <Route path="/mail" element={<Mail/>}></Route>
-                  <Route path="/newpassword" element={<NewPassword/>}></Route>
-                  <Route path="/report" element={<Report/>}></Route>
-                  <Route path="/personality" element={<Personality/>}></Route>
-              </Routes>
-           </BrowserRouter>    
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeRouting />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/signin" element={<Signin />}></Route>
+          <Route path="/careerlist" element={<CareerList />}></Route>
+          <Route path="/admin" element={<UserProfileAdmin />}></Route>
+          <Route path="/employer" element={<UserProfileEmployer />}></Route>
+          <Route path="/user" element={<UserProfile />}></Route>
+          <Route path="/test1" element={<Test1 />}></Route>
+          <Route path="/test2" element={<Test2 />}></Route>
+          <Route path="/test3" element={<Test3 />}></Route>
+          <Route path="/questiontest1" element={<QuestionsTest1 />}></Route>
+          <Route path="/questiontest2" element={<QuestionsTest2 />}></Route>
+          <Route path="/questiontest3" element={<QuestionsTest3 />}></Route>
+          <Route path="/post" element={<PostJob />}></Route>
+          <Route path="/reset" element={<Reset />}></Route>
+          <Route path="/mail" element={<Mail />}></Route>
+          <Route path="/newpassword" element={<NewPassword />}></Route>
+          <Route path="/report" element={<Report />}></Route>
+          <Route path="/personality" element={<Personality />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
