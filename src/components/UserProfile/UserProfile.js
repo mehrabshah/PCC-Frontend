@@ -67,11 +67,11 @@ export default function () {
                       alt=""
                     ></img>
                   </div>
-                  <div>
+                  {/* <div>
                     <h1 className="text-3xl text-[#E3CCAE]  font-medium">
                       Ali
                     </h1>
-                  </div>
+                  </div> */}
                   <div className="flex flex-row / space-x-4">
                     <div
                       className="flex items-center justify-center / h-12 text-xl bg-[#B8621B] w-24 text-[#E3CCAE]  hover:bg-blue-900 rounded"

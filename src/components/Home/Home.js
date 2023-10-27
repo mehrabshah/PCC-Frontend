@@ -58,7 +58,7 @@ export default function Home() {
           <div className=" box-border bg-[#f8fafb] md:bg-black / z-0 ">
             <div className="wrapper flex items-center justify-center ">
               <div
-                className="/  flex flex-col items-center justify-center space-y-4 md:space-y-0 lg:flex-row lg:items-center lg:justify-center 
+                className="/  flex flex-col items-center justify-center space-y-4 md:space-y-0 xl:flex-row xl:items-center xl:justify-center 
     
                             md:flex-row md:items-center md:justify-center md:relative md:bottom-24 z-0"
               >
