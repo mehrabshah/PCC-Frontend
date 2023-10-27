@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <>
       <div>
-        <div className="pl-1 pr-1 p-1 w-full bg-[#e3eed8] fixed top-0 z-50">
+        <div className="pl-1 pr-1 p-8 w-full bg-[#e3eed8] fixed top-0 z-50">
           <div className="flex   justify-between h-full  ">
             <div
               className={`${

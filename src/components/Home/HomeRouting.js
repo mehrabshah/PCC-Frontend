@@ -6,10 +6,12 @@ import Home from './Home'
 export default function HomeRouting() {
   return (
     <>
+      <div className=''>
        <Navbar/>
        <Home/>
        <Professions/>
        <Footer/>
+       </div>
     </>
   )
 }

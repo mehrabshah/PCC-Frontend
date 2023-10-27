@@ -51,7 +51,7 @@ export default function Home() {
       <br></br>
       <br></br>
 
-      {/* Hero section bottom*/}
+      
 
       <div className="bg-black">
         <div className="lg:max-w-5xl lg:mx-auto md:bg-black z-0">

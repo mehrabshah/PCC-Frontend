@@ -3,8 +3,7 @@ import { Link} from 'react-router-dom';
 export default function Testname() {
     const tests = [
         { id: 1, name: 'MBIT', },
-        { id: 2, name: 'NEO-PI-R', },
-        { id: 3, name: 'BFI', },
+      
     ];
     const allTests = tests.map((test) => (
         
