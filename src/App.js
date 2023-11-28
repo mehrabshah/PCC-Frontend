@@ -20,12 +20,15 @@ import NewPassword from './components/ResetPassword/NewPassword';
 import Report from './components/UserProfile/Report';
 import Personality from './components/UserProfile/Personality';
 import CareerList from './components/UserProfile/CareerList';
+import { Home } from './UserSide/pages/Home';
 function App() {
   return (
     <>
+
+     
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomeRouting />}></Route>
+          <Route path="/" element={<Home/>}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/signin" element={<Signin />}></Route>
           <Route path="/careerlist" element={<CareerList />}></Route>

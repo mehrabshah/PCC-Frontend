@@ -1,0 +1,10 @@
+.banner-slider{
+   background-image: url("../../../../public/images/Userside/bg.jpg");
+   background-position: 50%;
+   background-repeat: no-repeat;
+   aspect-ratio: 6/3;
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   background-blend-mode: multiply;
+}
