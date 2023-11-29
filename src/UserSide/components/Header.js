@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Navbar } from "flowbite-react";
+import { Link } from "react-router-dom";
 const navLinks = [
   { href: "#", text: "Home" },
   { href: "#", text: "About" },
@@ -20,12 +21,18 @@ export const Header = () => {
           </span>
         </Navbar.Brand>
         <div className="flex md:order-2">
-          <Button className="rounded-sm text-[#ffffff]  bg-[#06CA8C] / border-2 border-[#ffffff] ">
-            Login
-          </Button>
-          <Button className="rounded-sm ms-3 text-[#06CA8C] bg-[#ffffff]   hover:bg-[#06CA8C]  hover:text-[#ffffff]">
-            Register
-          </Button>
+          <Link to="/signin">
+            <Button className="rounded-sm text-[#ffffff]  bg-[#06CA8C] / border-2 border-[#ffffff] ">
+              Login
+            </Button>
+          </Link>
+
+          <Link to="/signup">
+            <Button className="rounded-sm ms-3 text-[#06CA8C] bg-[#ffffff]   hover:bg-[#06CA8C]  hover:text-[#ffffff]">
+              Register
+            </Button>
+          </Link>
+
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>

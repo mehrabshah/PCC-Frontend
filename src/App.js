@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import Signin from './components/Signin';
-import Signup from './components/Signup';
+
 import UserProfile from './components/UserProfile/UserProfile';
 import UserProfileAdmin from './components/Admin/UserProfileAdmin';
 import Test1 from './components/Admin/Test1/Test1';
 import Test2 from './components/Admin/Test2/Test2';
 import Test3 from './components/Admin/Test3/Test3';
 import QuestionsTest1 from './components/UserProfile/QuestionsTest1';
-import HomeRouting from './components/Home/HomeRouting';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UserProfileEmployer from './components/Employer/UserProfileEmployer';
 import QuestionsTest2 from './components/UserProfile/QuestionsTest2';
@@ -21,17 +20,19 @@ import Report from './components/UserProfile/Report';
 import Personality from './components/UserProfile/Personality';
 import CareerList from './components/UserProfile/CareerList';
 import { Home } from './UserSide/pages/Home';
+import { Signup } from './auth/pages/signup/Signup';
 function App() {
   return (
     <>
 
-     
+        
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
-          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/signup" element={<Signup/>}></Route>
           <Route path="/signin" element={<Signin />}></Route>
-          <Route path="/careerlist" element={<CareerList />}></Route>
+          {/* <Route path="/careerlist" element={<CareerList />}></Route>
           <Route path="/admin" element={<UserProfileAdmin />}></Route>
           <Route path="/employer" element={<UserProfileEmployer />}></Route>
           <Route path="/user" element={<UserProfile />}></Route>
@@ -46,7 +47,7 @@ function App() {
           <Route path="/mail" element={<Mail />}></Route>
           <Route path="/newpassword" element={<NewPassword />}></Route>
           <Route path="/report" element={<Report />}></Route>
-          <Route path="/personality" element={<Personality />}></Route>
+          <Route path="/personality" element={<Personality />}></Route> */}
         </Routes>
       </BrowserRouter>
     </>
