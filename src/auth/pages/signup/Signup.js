@@ -15,6 +15,7 @@ const inputFields = [
     name: "password",
     placeholder: "Password",
   },
+
 ];
 const roleOptions = [
   { label: "HR", value: "hr" },
@@ -54,7 +55,6 @@ export const Signup = () => {
                 error={errors[field.name]}
               />
             ))}
-
             <RadioButton
               label="Select Role"
               options={roleOptions}
@@ -71,7 +71,7 @@ export const Signup = () => {
 
         <div className="text-center mt-5">
           <span>
-            Already Have an Account{" "}
+            Already Have an Account{" "}?
             <Link className="text-red-500 cursor-pointer" to="/signin">
               Log in
             </Link>

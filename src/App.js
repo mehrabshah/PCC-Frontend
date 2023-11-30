@@ -21,17 +21,18 @@ import Personality from './components/UserProfile/Personality';
 import CareerList from './components/UserProfile/CareerList';
 import { Home } from './UserSide/pages/Home';
 import { Signup } from './auth/pages/signup/Signup';
+import { Login } from './auth/pages/login/Login';
 function App() {
   return (
     <>
 
-        
+               
       
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/signup" element={<Signup/>}></Route>
-          <Route path="/signin" element={<Signin />}></Route>
+          <Route path="/signin" element={<Login />}></Route>
           {/* <Route path="/careerlist" element={<CareerList />}></Route>
           <Route path="/admin" element={<UserProfileAdmin />}></Route>
           <Route path="/employer" element={<UserProfileEmployer />}></Route>
