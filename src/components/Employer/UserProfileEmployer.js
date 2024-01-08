@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Info from '../UserProfile/Info';
 import { useSelector } from 'react-redux';
@@ -11,6 +11,20 @@ export default function () {
     { id: 2, name: 'test2' },
     { id: 3, name: 'test3' },
   ];
+  
+  const [userType, setUserType] = useState({});
+
+   useEffect(() => {
+    const storedResponse = localStorage.getItem('userType');
+    if (storedResponse) {
+      const userType = JSON.parse(storedResponse);
+      setUserType(userType);
+      console.log(userType.email);
+    }
+  }, []);
+
+
+
   const rendertest = tests.map((test) => (
     <div key={test.id} className="flex-col flex space-y-4">
       <div className="flex flex-row justify-between items-center space-y-4">
@@ -51,7 +65,7 @@ export default function () {
                   </div>
                   <div>
                     <h1 className="text-3xl font-medium text-[#E3CCAE]">
-                      Mehrab Ali
+                      {userType.username}
                     </h1>
                   </div>
                   <div className="flex flex-row / space-x-4">

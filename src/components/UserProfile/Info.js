@@ -1,55 +1,47 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useForm } from "react-hook-form";
 export default function Info() {
-  const initialFormData = [
+  const [usertype, setUserType] = useState({});
+  const inputFields = [
+    { label: "User Name", type: "text", name: "username" },
     {
-      label: 'Full Name',
-      type: 'text',
-      id: 'name',
-      value: 'Ali',
-      readOnly: true,
-    },
-    {
-      label: 'Email',
-      type: 'email',
-      id: 'email',
-      value: 'ali123@example.com',
-      readOnly: true,
-    },
-    { label: 'Age', type: 'number', id: 'age', value: '22', readOnly: true },
-    {
-      label: 'Gender',
-      type: 'text',
-      id: 'gender',
-      value: 'Male',
-      readOnly: true,
+      label: "Role",
+      type: "text",
+      name: "user_type",
     },
   ];
 
-  const [formData, setFormData] = useState(initialFormData);
-  const [isEditMode, setIsEditMode] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm();
 
-  const handleEditClick = () => {
-    setIsEditMode(true);
-  };
+  useEffect(() => {
+    const storedResponse = localStorage.getItem("userType");
+    console.log(storedResponse)
+    if (storedResponse) {
+      const userType = JSON.parse(storedResponse);
+      setUserType(userType);
+    }
+    setValue("username", usertype.username);
+    setValue("user_type", usertype.user_type);
+  }, []);
 
-  const handleSaveClick = () => {
-    setIsEditMode(false);
-    // Handle form submission logic here
-    console.log(formData);
-  };
+  const onSubmit = async (data) => {
+    console.log(data);
+    //  try{
+    //    const response = await axios.put(`http://127.0.0.1:3000/users/test1`, formData);
 
-  const handleChange = (e, id) => {
-    const updatedFormData = formData.map((field) => {
-      if (field.id === id) {
-        return {
-          ...field,
-          value: e.target.value,
-        };
-      }
-      return field;
-    });
-    setFormData(updatedFormData);
+    //  }
+    //  catch(error)
+    //  {
+
+    //  }
+     setValue("username", usertype.username);
+    setValue("user_type", usertype.user_type);
   };
 
   return (
@@ -57,43 +49,31 @@ export default function Info() {
       <div className="w-full bg-[#262A56] border border-gray-200">
         <div className="flex flex-col w-full">
           <div>
-            <form className="flex flex-col space-y-4 p-8">
-              {formData.map((field) => (
+            <form
+              className="flex flex-col space-y-4 p-8"
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              {inputFields.map((field) => (
                 <div className="flex flex-row justify-between" key={field.id}>
-                  <label
-                    className="block mb-2 text-[#E3CCAE]"
-                    htmlFor={field.id}
-                  >
-                    {field.label}
+                  {" "}
+                  <label className="block mb-2 text-[#E3CCAE]">
+                    {field.label}:
                   </label>
                   <input
                     className="w-[70%] px-4 py-2 border rounded-sm bg-[#B8621B] text-[#E3CCAE]"
+                    key={field.name}
+                    label={field.label}
                     type={field.type}
-                    id={field.id}
-                    value={field.value}
-                    readOnly={!isEditMode}
-                    onChange={(e) => handleChange(e, field.id)}
+                    {...register(field.name)}
                   />
                 </div>
               ))}
+
               <div className="flex flex-row">
-                {!isEditMode ? (
-                  <button
-                    type="button"
-                    className="bg-[#B8621B] w-[20%] h-[3rem] text-[#E3CCAE]"
-                    onClick={handleEditClick}
-                  >
-                    Edit
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    className="bg-[#B8621B] w-[20%] h-[3rem] text-[#E3CCAE]"
-                    onClick={handleSaveClick}
-                  >
-                    Save
-                  </button>
-                )}
+                <input
+                  type="submit"
+                  className="bg-[#B8621B] w-[20%] h-[3rem] text-[#E3CCAE] cursor-pointer"
+                />
               </div>
             </form>
           </div>

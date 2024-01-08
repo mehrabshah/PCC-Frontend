@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Info from '../UserProfile/Info';
 import { Link } from 'react-router-dom';
 import Testname from './Testname';
 export default function () {
+    useEffect(()=>{
+
+        const userType = localStorage.getItem('userType');
+       console.log(userType)
+
+       },[])
+    
     
 return (
     <>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import "./Signup.css";
 import { useForm } from "react-hook-form";
 import { signUpUser } from "./../../services/Authservices";
@@ -23,6 +24,7 @@ const roleOptions = [
   { label: "User", value: "user" },
 ];
 export const Signup = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -33,6 +35,7 @@ export const Signup = () => {
     try {
       const responseData = await signUpUser(data);
       console.log("Registration successful!", responseData);
+      navigate('/signin');
     } catch (error) {
       console.error(error);
     }
@@ -58,7 +61,7 @@ export const Signup = () => {
             <RadioButton
               label="Select Role"
               options={roleOptions}
-              register={register("role", { required: "Role is required" })}
+              register={register("user_type", { required: "Role is required" })}
               error={errors.role}
             />
 

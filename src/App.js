@@ -33,7 +33,7 @@ function App() {
           <Route path="/" element={<Home/>}></Route>
           <Route path="/signup" element={<Signup/>}></Route>
           <Route path="/signin" element={<Login />}></Route>
-          {/* <Route path="/careerlist" element={<CareerList />}></Route>
+           <Route path="/careerlist" element={<CareerList />}></Route>
           <Route path="/admin" element={<UserProfileAdmin />}></Route>
           <Route path="/employer" element={<UserProfileEmployer />}></Route>
           <Route path="/user" element={<UserProfile />}></Route>
@@ -48,7 +48,7 @@ function App() {
           <Route path="/mail" element={<Mail />}></Route>
           <Route path="/newpassword" element={<NewPassword />}></Route>
           <Route path="/report" element={<Report />}></Route>
-          <Route path="/personality" element={<Personality />}></Route> */}
+          <Route path="/personality" element={<Personality />}></Route> 
         </Routes>
       </BrowserRouter>
     </>
