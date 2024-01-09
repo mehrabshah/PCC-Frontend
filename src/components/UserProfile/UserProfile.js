@@ -1,28 +1,24 @@
-import React, { useState } from 'react';
-import Info from './Info';
-import Jobs from './Jobs';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import Result1 from './Result1';
+import React, { useState } from "react";
+import Info from "./Info";
+import Jobs from "./Jobs";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Result1 from "./Result1";
 // import Result2 from './Result2';
 // import Result3 from './Result3';
-import { useDispatch, useSelector } from 'react-redux';
-import { modifytest1bool } from '../../redux/test1bool';
-import { modifytest2bool } from '../../redux/test2bool';
-import { modifytest3bool } from '../../redux/test3bool';
-import Report from './Report';
-import Personality from './Personality';
+import { useDispatch, useSelector } from "react-redux";
+import { modifytest1bool } from "../../redux/test1bool";
+import { modifytest2bool } from "../../redux/test2bool";
+import { modifytest3bool } from "../../redux/test3bool";
+import Report from "./Report";
+import Personality from "./Personality";
 export default function () {
   const test1bool = useSelector((state) => state.test1bool.value);
   const test2bool = useSelector((state) => state.test2bool.value);
   const test3bool = useSelector((state) => state.test3bool.value);
   const dispatch = useDispatch();
 
-  const tests = [
-    { id: 1, name: 'MBIT' },
-    // { id: 2, name: 'NEO-PI-R' },
-    // { id: 3, name: 'BFI' },
-  ];
+  const tests = [{ id: 1, name: "MBIT" }];
 
   const rendertest = tests.map((test) => (
     <div key={test.id} className="flex-col flex space-y-4">
@@ -90,21 +86,13 @@ export default function () {
                     className="flex items-center justify-center h-12 text- xl bg-[#B8621B] / w-44 text-[#E3CCAE]  hover:bg-blue-900 rounded"
                     onClick={() => handleTabClick(3)}
                   >
-                    <button>Generate Report</button>
+                    <button>Description</button>
                   </div>
                   <div
                     className="flex items-center justify-center h-12 text- xl bg-[#B8621B] / w-44 text-[#E3CCAE]  hover:bg-blue-900 rounded"
                     onClick={() => handleTabClick(4)}
                   >
-                    <button>Personality Standout</button>
-                  </div>
-                  <div
-                    className="flex items-center justify-center h-12 text- xl bg-[#B8621B] / w-44 text-[#E3CCAE]  hover:bg-blue-900 rounded"
-                    onClick={() => handleTabClick(4)}
-                  >
-                    <Link to="/careerlist">
-                      <button> Career List</button>
-                    </Link>
+                    <button>Report</button>
                   </div>
 
                   <div className="h-[0.09rem]  bg-[#E3CCAE] w-72"></div>
@@ -112,7 +100,7 @@ export default function () {
                 {/* Lower */}
                 <div className="flex flex-col items-center space-y-6 pt-4">
                   <div className="text-3xl font-medium uppercase text-[#E3CCAE] rounded">
-                    Attempt test{' '}
+                    Attempt test{" "}
                   </div>
                   <div>
                     {rendertest}

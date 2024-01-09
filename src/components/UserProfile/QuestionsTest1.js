@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { RadioButtonQuestions } from "./RadioButtonQuestions";
+import { postArrayAdd } from "../../redux/postarray";
 const Question1 = [
   { label: "option1", value: "1" },
   { label: "option2", value: "2" },
@@ -139,6 +141,7 @@ const resultArray = [
 export default function QuestionsTest1() {
   const [result, setResult] = useState(resultArray);
   const [usertype, setUserType] = useState({});
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
@@ -233,13 +236,15 @@ export default function QuestionsTest1() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
-
     try {
-      const response = axios.post(
+      const response = await axios.post(
         `http://127.0.0.1:3000/mbti/submit?email=${usertype.email}`,
         data
       );
+
+      console.log(response.data.personality);
+      dispatch(postArrayAdd(response.data.personality));
+
       navigate("/user");
     } catch (error) {
       console.log(error);

@@ -1,21 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 export const postArraySlice = createSlice({
   name: 'postArray',  
-  initialState:[],
+  initialState:"",
 
-  
   reducers: {
     postArrayAdd: (state,action) => {
-        
-        const newPost = {
-            jobTitle:action.payload.jobTitle,
-            jobDescription:action.payload.jobDescription,
-            jobTags:action.payload.jobTitle,
-            
-            // Use the payload as the question text
-          };
-        
-        return [...state,newPost ]; 
+        console.log("state",state);
+        console.log("action",action)
+        return action.payload;
     },
   },
 })

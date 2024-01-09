@@ -63,8 +63,6 @@ export default function Info() {
     } catch (error) {
       throw error.response.data || "Something went wrong";
     }
-
-   
   };
 
   return (
