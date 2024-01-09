@@ -10,6 +10,16 @@ export default function Info() {
       type: "text",
       name: "user_type",
     },
+    {
+      label: "Email",
+      type: "text",
+      name: "email",
+    },
+    {
+      label: "Password",
+      type: "password",
+      name: "password",
+    },
   ];
 
   const {
@@ -20,28 +30,41 @@ export default function Info() {
   } = useForm();
 
   useEffect(() => {
-    const storedResponse = localStorage.getItem("userType");
-    console.log(storedResponse)
-    if (storedResponse) {
-      const userType = JSON.parse(storedResponse);
-      setUserType(userType);
-    }
-    setValue("username", usertype.username);
-    setValue("user_type", usertype.user_type);
+    const fetchData = async () => {
+      try {
+        const storedResponse = localStorage.getItem("userType");
+        console.log(storedResponse);
+        if (storedResponse) {
+          const userType = JSON.parse(storedResponse);
+          setUserType(userType);
+          setValue("username", userType.username);
+          setValue("user_type", userType.user_type);
+          setValue("email", userType.email);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const onSubmit = async (data) => {
-    console.log(data);
-    //  try{
-    //    const response = await axios.put(`http://127.0.0.1:3000/users/test1`, formData);
+    try {
+      const response = await axios.put(`http://127.0.0.1:3000/users/`, data);
 
-    //  }
-    //  catch(error)
-    //  {
+      localStorage.setItem("userType", JSON.stringify(response.data));
 
-    //  }
-     setValue("username", usertype.username);
-    setValue("user_type", usertype.user_type);
+      setValue("username", response.data.username);
+      setValue("user_type", response.data.user_type);
+      setValue("email", response.data.email);
+
+      setUserType(response.data);
+    } catch (error) {
+      throw error.response.data || "Something went wrong";
+    }
+
+    console.log(usertype);
   };
 
   return (
@@ -65,6 +88,7 @@ export default function Info() {
                     label={field.label}
                     type={field.type}
                     {...register(field.name)}
+                    readOnly={field.name === "email"}
                   />
                 </div>
               ))}
