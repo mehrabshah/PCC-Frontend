@@ -24,7 +24,7 @@ export const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
+   
     try {
       const responseData = await logInUser(data);
 
@@ -32,14 +32,14 @@ export const Login = () => {
       localStorage.setItem("userType", JSON.stringify(responseData));
       console.log(responseData);
       if (responseData.user_type =="hr") {
-        console.log("hr");
+       
 
         navigate("/employer");
       } else if (responseData.user_type == "admin") {
-        console.log("employer");
+       
         navigate("/admin");
       } else if (responseData.user_type == "user") {
-        console.log("user");
+      
         navigate("/user");
       }
 

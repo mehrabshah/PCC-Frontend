@@ -64,7 +64,7 @@ export default function Info() {
       throw error.response.data || "Something went wrong";
     }
 
-    console.log(usertype);
+   
   };
 
   return (

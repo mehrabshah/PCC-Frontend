@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { RadioButtonQuestions } from "./RadioButtonQuestions";
 const Question1 = [
@@ -122,6 +123,7 @@ const resultArray = [
   { name: "48", label: " ", options: Question48 },
   { name: "49", label: " ", options: Question49 },
   { name: "50", label: " ", options: Question50 },
+  { name: "51", label: " ", options: Question50 },
   { name: "52", label: " ", options: Question51 },
   { name: "52", label: " ", options: Question52 },
   { name: "53", label: " ", options: Question53 },
@@ -132,23 +134,17 @@ const resultArray = [
   { name: "58", label: " ", options: Question58 },
   { name: "59", label: " ", options: Question59 },
   { name: "60", label: " ", options: Question60 },
-
-   
-
-
 ];
 
-
-
 export default function QuestionsTest1() {
-  
-  
-  const [result,setResult]=useState(resultArray)
+  const [result, setResult] = useState(resultArray);
+  const [usertype, setUserType] = useState({});
+
+  const navigate = useNavigate();
+
   const fetchData = async () => {
     try {
       const response = await axios.get("http://127.0.0.1:3000/mbit/questions");
-      console.log(response.data)
-
 
       const updatedResultArray = [
         { name: "1", label: response.data[0], options: Question1 },
@@ -201,28 +197,54 @@ export default function QuestionsTest1() {
         { name: "48", label: response.data[47], options: Question48 },
         { name: "49", label: response.data[48], options: Question49 },
         { name: "50", label: response.data[49], options: Question50 },
-       
+        { name: "51", label: response.data[50], options: Question51 },
+        { name: "52", label: response.data[51], options: Question52 },
+        { name: "53", label: response.data[52], options: Question53 },
+        { name: "54", label: response.data[53], options: Question54 },
+        { name: "55", label: response.data[54], options: Question55 },
+        { name: "56", label: response.data[55], options: Question56 },
+        { name: "57", label: response.data[56], options: Question57 },
+        { name: "58", label: response.data[57], options: Question58 },
+        { name: "59", label: response.data[58], options: Question59 },
+        { name: "60", label: response.data[59], options: Question60 },
       ];
-      
 
-      setResult( updatedResultArray)
-
-
+      setResult(updatedResultArray);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
-  
+
   useEffect(() => {
+    const storedResponse = localStorage.getItem("userType");
+    console.log(storedResponse);
+    if (storedResponse) {
+      const userType = JSON.parse(storedResponse);
+      setUserType(userType);
+    }
+
     fetchData();
   }, []);
-
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const onSubmit = async (data) => {
+    console.log(data);
+
+    try {
+      const response = axios.post(
+        `http://127.0.0.1:3000/mbti/submit?email=${usertype.email}`,
+        data
+      );
+      navigate("/user");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -232,7 +254,7 @@ export default function QuestionsTest1() {
             <ul className="w-full ">
               <div className="  bg-[#262A56] pt-6 pb-6 w-full  box-border flex flex-row items-center justify-center ">
                 <div className="w-[90%]  bg-[#262A56] ">
-                  <form>
+                  <form onSubmit={handleSubmit(onSubmit)}>
                     {result.map((item, index) => (
                       <div className="flex flex-col  mt-24  space-y-36 w-full">
                         <RadioButtonQuestions
