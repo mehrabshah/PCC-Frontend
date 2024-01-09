@@ -71,7 +71,7 @@ const Question58 = [...Question1];
 const Question59 = [...Question1];
 const Question60 = [...Question1];
 
-const result = [
+const resultArray = [
   { name: "1", label: " ", options: Question1 },
   { name: "2", label: " ", options: Question2 },
   { name: "3", label: " ", options: Question3 },
@@ -122,17 +122,101 @@ const result = [
   { name: "48", label: " ", options: Question48 },
   { name: "49", label: " ", options: Question49 },
   { name: "50", label: " ", options: Question50 },
+  { name: "52", label: " ", options: Question51 },
+  { name: "52", label: " ", options: Question52 },
+  { name: "53", label: " ", options: Question53 },
+  { name: "54", label: " ", options: Question54 },
+  { name: "55", label: " ", options: Question55 },
+  { name: "56", label: " ", options: Question56 },
+  { name: "57", label: " ", options: Question57 },
+  { name: "58", label: " ", options: Question58 },
+  { name: "59", label: " ", options: Question59 },
+  { name: "60", label: " ", options: Question60 },
+
+   
+
+
 ];
 
+
+
 export default function QuestionsTest1() {
-  useEffect(() => {
+  
+  
+  const [result,setResult]=useState(resultArray)
+  const fetchData = async () => {
     try {
-      const response = axios.get("http://127.0.0.1:3000/mbit/questions");
+      const response = await axios.get("http://127.0.0.1:3000/mbit/questions");
+      console.log(response.data)
+
+
+      const updatedResultArray = [
+        { name: "1", label: response.data[0], options: Question1 },
+        { name: "2", label: response.data[1], options: Question2 },
+        { name: "3", label: response.data[2], options: Question3 },
+        { name: "4", label: response.data[3], options: Question4 },
+        { name: "5", label: response.data[4], options: Question5 },
+        { name: "6", label: response.data[5], options: Question6 },
+        { name: "7", label: response.data[6], options: Question7 },
+        { name: "8", label: response.data[7], options: Question8 },
+        { name: "9", label: response.data[8], options: Question9 },
+        { name: "10", label: response.data[9], options: Question10 },
+        { name: "11", label: response.data[10], options: Question11 },
+        { name: "12", label: response.data[11], options: Question12 },
+        { name: "13", label: response.data[12], options: Question13 },
+        { name: "14", label: response.data[13], options: Question14 },
+        { name: "15", label: response.data[14], options: Question15 },
+        { name: "16", label: response.data[15], options: Question16 },
+        { name: "17", label: response.data[16], options: Question17 },
+        { name: "18", label: response.data[17], options: Question18 },
+        { name: "19", label: response.data[18], options: Question19 },
+        { name: "20", label: response.data[19], options: Question20 },
+        { name: "21", label: response.data[20], options: Question21 },
+        { name: "22", label: response.data[21], options: Question22 },
+        { name: "23", label: response.data[22], options: Question23 },
+        { name: "24", label: response.data[23], options: Question24 },
+        { name: "25", label: response.data[24], options: Question25 },
+        { name: "26", label: response.data[25], options: Question26 },
+        { name: "27", label: response.data[26], options: Question27 },
+        { name: "28", label: response.data[27], options: Question28 },
+        { name: "29", label: response.data[28], options: Question29 },
+        { name: "30", label: response.data[29], options: Question30 },
+        { name: "31", label: response.data[30], options: Question31 },
+        { name: "32", label: response.data[31], options: Question32 },
+        { name: "33", label: response.data[32], options: Question33 },
+        { name: "34", label: response.data[33], options: Question34 },
+        { name: "35", label: response.data[34], options: Question35 },
+        { name: "36", label: response.data[35], options: Question36 },
+        { name: "37", label: response.data[36], options: Question37 },
+        { name: "38", label: response.data[37], options: Question38 },
+        { name: "39", label: response.data[38], options: Question39 },
+        { name: "40", label: response.data[39], options: Question40 },
+        { name: "41", label: response.data[40], options: Question41 },
+        { name: "42", label: response.data[41], options: Question42 },
+        { name: "43", label: response.data[42], options: Question43 },
+        { name: "44", label: response.data[43], options: Question44 },
+        { name: "45", label: response.data[44], options: Question45 },
+        { name: "46", label: response.data[45], options: Question46 },
+        { name: "47", label: response.data[46], options: Question47 },
+        { name: "48", label: response.data[47], options: Question48 },
+        { name: "49", label: response.data[48], options: Question49 },
+        { name: "50", label: response.data[49], options: Question50 },
+       
+      ];
       
+
+      setResult( updatedResultArray)
+
+
     } catch (error) {
       console.error("Error fetching data:", error);
     }
+  };
+  
+  useEffect(() => {
+    fetchData();
   }, []);
+
 
   const {
     register,
@@ -155,6 +239,7 @@ export default function QuestionsTest1() {
                           options={item.options}
                           name={item.name}
                           register={register}
+                          label={item.label}
                         />
                       </div>
                     ))}
