@@ -10,8 +10,7 @@ import Test3 from './components/Admin/Test3/Test3';
 import QuestionsTest1 from './components/UserProfile/QuestionsTest1';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import UserProfileEmployer from './components/Employer/UserProfileEmployer';
-import QuestionsTest2 from './components/UserProfile/QuestionsTest2';
-import QuestionsTest3 from './components/UserProfile/QuestionsTest3';
+
 import PostJob from './components/Employer/PostJob';
 import Reset from './components/ResetPassword/Reset';
 import Mail from './components/ResetPassword/Mail';
@@ -41,8 +40,7 @@ function App() {
           <Route path="/test2" element={<Test2 />}></Route>
           <Route path="/test3" element={<Test3 />}></Route>
           <Route path="/questiontest1" element={<QuestionsTest1 />}></Route>
-          <Route path="/questiontest2" element={<QuestionsTest2 />}></Route>
-          <Route path="/questiontest3" element={<QuestionsTest3 />}></Route>
+         
           <Route path="/post" element={<PostJob />}></Route>
           <Route path="/reset" element={<Reset />}></Route>
           <Route path="/mail" element={<Mail />}></Route>

@@ -28,14 +28,18 @@ export const Login = () => {
     try {
       const responseData = await logInUser(data);
 
-      console.log(responseData);
+     
       localStorage.setItem("userType", JSON.stringify(responseData));
+      console.log(responseData);
+      if (responseData.user_type =="hr") {
+        console.log("hr");
 
-      if ((responseData.user_type = "hr")) {
         navigate("/employer");
-      } else if ((responseData.user_type = "admin")) {
+      } else if (responseData.user_type == "admin") {
+        console.log("employer");
         navigate("/admin");
-      } else if ((responseData.user_type = "user")) {
+      } else if (responseData.user_type == "user") {
+        console.log("user");
         navigate("/user");
       }
 

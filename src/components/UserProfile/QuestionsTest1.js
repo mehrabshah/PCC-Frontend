@@ -1,50 +1,144 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import UserOptions from './UserOptions';
-import { Link } from 'react-router-dom';
-import { modifytest1bool } from '../../redux/test1bool';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { RadioButtonQuestions } from "./RadioButtonQuestions";
+const Question1 = [
+  { label: "option1", value: "1" },
+  { label: "option2", value: "2" },
+  { label: "option3", value: "3" },
+  { label: "option4", value: "4" },
+  { label: "option5", value: "5" },
+  { label: "option6", value: "6" },
+  { label: "option7", value: "7" },
+];
+const Question2 = [...Question1];
+const Question3 = [...Question1];
+const Question4 = [...Question1];
+const Question5 = [...Question1];
+const Question6 = [...Question1];
+const Question7 = [...Question1];
+const Question8 = [...Question1];
+const Question9 = [...Question1];
+const Question10 = [...Question1];
+const Question11 = [...Question1];
+const Question12 = [...Question1];
+const Question13 = [...Question1];
+const Question14 = [...Question1];
+const Question15 = [...Question1];
+const Question16 = [...Question1];
+const Question17 = [...Question1];
+const Question18 = [...Question1];
+const Question19 = [...Question1];
+const Question20 = [...Question1];
+const Question21 = [...Question1];
+const Question22 = [...Question1];
+const Question23 = [...Question1];
+const Question24 = [...Question1];
+const Question25 = [...Question1];
+const Question26 = [...Question1];
+const Question27 = [...Question1];
+const Question28 = [...Question1];
+const Question29 = [...Question1];
+const Question30 = [...Question1];
+const Question31 = [...Question1];
+const Question32 = [...Question1];
+const Question33 = [...Question1];
+const Question34 = [...Question1];
+const Question35 = [...Question1];
+const Question36 = [...Question1];
+const Question37 = [...Question1];
+const Question38 = [...Question1];
+const Question39 = [...Question1];
+const Question40 = [...Question1];
+const Question41 = [...Question1];
+const Question42 = [...Question1];
+const Question43 = [...Question1];
+const Question44 = [...Question1];
+const Question45 = [...Question1];
+const Question46 = [...Question1];
+const Question47 = [...Question1];
+const Question48 = [...Question1];
+const Question49 = [...Question1];
+const Question50 = [...Question1];
+const Question51 = [...Question1];
+const Question52 = [...Question1];
+const Question53 = [...Question1];
+const Question54 = [...Question1];
+const Question55 = [...Question1];
+const Question56 = [...Question1];
+const Question57 = [...Question1];
+const Question58 = [...Question1];
+const Question59 = [...Question1];
+const Question60 = [...Question1];
+
+const result = [
+  { name: "1", label: " ", options: Question1 },
+  { name: "2", label: " ", options: Question2 },
+  { name: "3", label: " ", options: Question3 },
+  { name: "4", label: " ", options: Question4 },
+  { name: "5", label: " ", options: Question5 },
+  { name: "6", label: " ", options: Question6 },
+  { name: "7", label: " ", options: Question7 },
+  { name: "8", label: " ", options: Question8 },
+  { name: "9", label: " ", options: Question9 },
+  { name: "10", label: " ", options: Question10 },
+  { name: "11", label: " ", options: Question11 },
+  { name: "12", label: " ", options: Question12 },
+  { name: "13", label: " ", options: Question13 },
+  { name: "14", label: " ", options: Question14 },
+  { name: "15", label: " ", options: Question15 },
+  { name: "16", label: " ", options: Question16 },
+  { name: "17", label: " ", options: Question17 },
+  { name: "18", label: " ", options: Question18 },
+  { name: "19", label: " ", options: Question19 },
+  { name: "20", label: " ", options: Question20 },
+  { name: "21", label: " ", options: Question21 },
+  { name: "22", label: " ", options: Question22 },
+  { name: "23", label: " ", options: Question23 },
+  { name: "24", label: " ", options: Question24 },
+  { name: "25", label: " ", options: Question25 },
+  { name: "26", label: " ", options: Question26 },
+  { name: "27", label: " ", options: Question27 },
+  { name: "28", label: " ", options: Question28 },
+  { name: "29", label: " ", options: Question29 },
+  { name: "30", label: " ", options: Question30 },
+  { name: "31", label: " ", options: Question31 },
+  { name: "32", label: " ", options: Question32 },
+  { name: "33", label: " ", options: Question33 },
+  { name: "34", label: " ", options: Question34 },
+  { name: "35", label: " ", options: Question35 },
+  { name: "36", label: " ", options: Question36 },
+  { name: "37", label: " ", options: Question37 },
+  { name: "38", label: " ", options: Question38 },
+  { name: "39", label: " ", options: Question39 },
+  { name: "40", label: " ", options: Question40 },
+  { name: "41", label: " ", options: Question41 },
+  { name: "42", label: " ", options: Question42 },
+  { name: "43", label: " ", options: Question43 },
+  { name: "44", label: " ", options: Question44 },
+  { name: "45", label: " ", options: Question45 },
+  { name: "46", label: " ", options: Question46 },
+  { name: "47", label: " ", options: Question47 },
+  { name: "48", label: " ", options: Question48 },
+  { name: "49", label: " ", options: Question49 },
+  { name: "50", label: " ", options: Question50 },
+];
 
 export default function QuestionsTest1() {
-  const dispatch = useDispatch();
-  const array1 = useSelector((state) => state.test1Array);
-  const [startIndex, setStartIndex] = useState(0);
-  const questionsPerPage = 3; // Number of questions to display per page
+  useEffect(() => {
+    try {
+      const response = axios.get("http://127.0.0.1:3000/mbit/questions");
+      
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }, []);
 
-  const questions = [
-    'I prefer warm and vibrant colors over cool and muted ones.',
-    'I find calm and soothing colors to be the most appealing.',
-    'Bright and energetic colors are more to my liking.',
-    'I am drawn to neutral and earthy tones in color palettes.',
-    'I enjoy the vibrancy of primary colors like red, blue, and yellow.',
-    'I prefer pastel shades and soft colors in my surroundings.',
-    'Bold and contrasting color combinations catch my eye.',
-    'I tend to choose monochromatic color schemes for my decor.',
-    'I find myself gravitating towards complex and intricate color patterns.',
-    'I like to experiment with unconventional and unconventional color choices.',
-    'I appreciate the aesthetics of grayscale and monochrome designs.',
-    'I enjoy the richness of deep, dark colors like navy and burgundy.',
-    'I am fond of light and airy colors that create a sense of openness.',
-    'I prefer a consistent color theme throughout my home or workspace.',
-    'I like to mix and match a variety of colors to create a vibrant atmosphere.',
-  ];
-
-  const handleClickNext = () => {
-    const newStartIndex = startIndex + questionsPerPage;
-    setStartIndex(newStartIndex);
-  };
-
-  const handleClickBack = () => {
-    const newStartIndex = startIndex - questionsPerPage;
-    setStartIndex(newStartIndex);
-  };
-
-  const visibleQuestions = questions.slice(
-    startIndex,
-    startIndex + questionsPerPage
-  );
-  const isLastPage = startIndex + questionsPerPage >= questions.length;
-
-  const isFirstPage = startIndex === 0;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <>
@@ -52,86 +146,29 @@ export default function QuestionsTest1() {
         <div className="lg:max-w-6xl  lg:mx-auto ">
           <div className="p-12">
             <ul className="w-full ">
-              {visibleQuestions.map((question, index) => (
-                <UserOptions key={index} item={question} />
-              ))}
+              <div className="  bg-[#262A56] pt-6 pb-6 w-full  box-border flex flex-row items-center justify-center ">
+                <div className="w-[90%]  bg-[#262A56] ">
+                  <form>
+                    {result.map((item, index) => (
+                      <div className="flex flex-col  mt-24  space-y-36 w-full">
+                        <RadioButtonQuestions
+                          options={item.options}
+                          name={item.name}
+                          register={register}
+                        />
+                      </div>
+                    ))}
+                    <input
+                      type="submit"
+                      className=" bg-[#B8621B]   ms-[870px]   text-[#ffffff] cursor-pointer p-3  / mb-12   mt-16"
+                    />
+                  </form>
+                </div>
+              </div>
             </ul>
-            <div className="flex justify-between">
-              {isFirstPage ? (
-                <div></div> // Empty space for layout consistency
-              ) : (
-                <button
-                  onClick={handleClickBack}
-                  className="bg-[#B8621B] h-12 w-32"
-                >
-                  Back
-                </button>
-              )}
-              {isLastPage ? (
-                <Link to="/user">
-                  <button
-                    onClick={() => {
-                      dispatch(modifytest1bool(true));
-                    }}
-                    className="bg-[#B8621B] h-12 w-32"
-                  >
-                    Submit
-                  </button>
-                </Link>
-              ) : (
-                <button
-                  onClick={handleClickNext}
-                  className="bg-[#B8621B]  h-12 w-32"
-                >
-                  Next
-                </button>
-              )}
-            </div>
           </div>
         </div>
       </div>
     </>
   );
 }
-
-// import React, { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux'
-// import UserOptions from './UserOptions'
-// import { Link } from 'react-router-dom';
-// import { modifytest1bool } from '../../redux/test1bool';
-// export default function QuestionsTest1() {
-//     const dispatch=useDispatch();
-//     const array1 = useSelector((state) => state.test1Array)
-//     const [showButton, setShowButton] = useState(true);
-//     const [startIndex, setStartIndex] = useState(0);
-//     const handleClick = () => {
-//         // Calculate the new start index by incrementing the current start index by 3
-//         const newStartIndex = startIndex + 3;
-//         // Update the start index state
-//         setStartIndex(newStartIndex);
-//     };
-//     const visibleItems = array1.slice(startIndex, startIndex + 3);
-//     const isLastThreeItems = startIndex + 3 >= array1.length;
-//     return (
-//         <>
-//             <div className="h-screen w-screen bg-[black] overflow-x-hidden box-border m-0 p-0 ">
-//                 <div className="lg:max-w-6xl  lg:mx-auto ">
-//                     <div className="p-12">
-//                         <ul className="w-full ">
-//                             {  visibleItems.map((item) => (
-//                                 <UserOptions key={item.id} item={item.text} />
-//                             ))}
-//                         </ul>
-//                         {isLastThreeItems &&  showButton  ? (
-
-//                                 <Link  to="/user"><button onClick={()=>{handleClick();dispatch(modifytest1bool(true)) }} className="bg-[#B8621B] h-12 w-32">Submit</button></Link>
-
-//                         ) : (
-//                             <button onClick={handleClick} className="bg-[#B8621B]  h-12 w-32">Next</button>
-//                         )}
-//                     </div>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
