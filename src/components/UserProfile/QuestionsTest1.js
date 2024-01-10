@@ -242,7 +242,6 @@ export default function QuestionsTest1() {
         data
       );
 
-      console.log(response.data.personality);
       dispatch(postArrayAdd(response.data.personality));
 
       navigate("/user");

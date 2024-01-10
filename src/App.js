@@ -21,6 +21,8 @@ import CareerList from './components/UserProfile/CareerList';
 import { Home } from './UserSide/pages/Home';
 import { Signup } from './auth/pages/signup/Signup';
 import { Login } from './auth/pages/login/Login';
+import Info from './components/UserProfile/Info';
+import Posted from './components/Employer/Posted';
 function App() {
   return (
     <>
@@ -36,19 +38,28 @@ function App() {
           <Route path="/admin" element={<UserProfileAdmin />}></Route>
           <Route path="/employer" element={<UserProfileEmployer />}></Route>
           <Route path="/user" element={<UserProfile />}></Route>
+
           <Route path="/test1" element={<Test1 />}></Route>
           <Route path="/test2" element={<Test2 />}></Route>
           <Route path="/test3" element={<Test3 />}></Route>
           <Route path="/questiontest1" element={<QuestionsTest1 />}></Route>
-         
+          <Route path="/report" element={<QuestionsTest1 />}></Route>
+          <Route path="/user/description" element={<Report />}></Route>
+          <Route path="/user/report" element={<Personality />}></Route> 
+          <Route path="/user/userdetail" element={ <Info/>}></Route>
+          <Route path="/jobs" element={<Posted/>}></Route>
+            
+                                
           <Route path="/post" element={<PostJob />}></Route>
           <Route path="/reset" element={<Reset />}></Route>
           <Route path="/mail" element={<Mail />}></Route>
           <Route path="/newpassword" element={<NewPassword />}></Route>
-          <Route path="/report" element={<Report />}></Route>
-          <Route path="/personality" element={<Personality />}></Route> 
+          
+          
         </Routes>
       </BrowserRouter>
+
+      
     </>
   );
 }
