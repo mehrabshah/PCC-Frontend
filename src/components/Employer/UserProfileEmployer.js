@@ -106,15 +106,23 @@ export default function () {
               <div className="flex flex-col lg:w-[70vw]   mt-8 space-y-4">
                 <Info />
                 <div>
-                  <ul className="w-full space-y-4">
-                    {postarray.map((item) => (
-                      <Posted
-                        jobTitle={item.jobTitle}
-                        jobTags={item.jobTags}
-                        jobDescription={item.jobDescription}
-                      />
-                    ))}
-                  </ul>
+                   
+                  <div>
+  {postarray.length > 0 ? (
+    <ul className="w-full space-y-4">
+      {postarray.map((item) => (
+        <Posted
+          key={item.jobTitle} // Make sure to add a unique key for each item
+          jobTitle={item.jobTitle}
+          jobTags={item.jobTags}
+          jobDescription={item.jobDescription}
+        />
+      ))}
+    </ul>
+  ) : (
+    <p>No posts to display</p>
+  )}
+</div>
                 </div>
               </div>
             </div>

@@ -51,7 +51,7 @@ export default function Info() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.put(`http://127.0.0.1:3000/users/`, data);
+      const response = await axios.put(`http://127.0.0.1:3001/users/`, data);
 
       localStorage.setItem("userType", JSON.stringify(response.data));
 
