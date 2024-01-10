@@ -5,9 +5,15 @@ export const postArraySlice = createSlice({
 
   reducers: {
     postArrayAdd: (state,action) => {
-        console.log("state",state);
-        console.log("action",action)
-        return action.payload;
+      const newPost = {
+        jobTitle:action.payload.jobTitle,
+        jobDescription:action.payload.jobDescription,
+        jobTags:action.payload.jobTitle,
+
+        
+      };
+
+    return [...state,newPost ]; 
     },
   },
 })
